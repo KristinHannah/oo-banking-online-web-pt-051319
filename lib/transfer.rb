@@ -13,7 +13,6 @@ class Transfer
   
   def linked_receiver
      @linked_receiver = BankAccount.find_by_name(self.receiver)
-     binding.pry
   end 
   
   def linked_sender
@@ -21,7 +20,7 @@ class Transfer
   end 
   
   def valid?
-   # self.linked_sender.valid? && self.linked_receiver.valid?
+   self.linked_sender.valid? && self.linked_receiver.valid?
   end 
   
   def execute_transaction 
