@@ -23,8 +23,4 @@ class Transfer
    linked_sender.valid? && linked_receiver.valid?
   end 
   
-  def execute_transaction 
-
-  end 
-  
 end
