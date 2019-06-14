@@ -11,16 +11,14 @@ class Transfer
     @status = "pending"
   end 
   
-  def linked_receiver
-     @linked_receiver = BankAccount.find_by_name(self.receiver)
-  end 
-  
-  def linked_sender
-    @linked_sender = BankAccount.find_by_name(self.sender)
-  end 
-  
   def valid?
    self.sender.valid? && self.receiver.valid?
   end 
+  
+  def execute_transaction
+    if self.sender.valid?
+      self.sender.balance -= self.amount 
+  end 
+  
   
 end
