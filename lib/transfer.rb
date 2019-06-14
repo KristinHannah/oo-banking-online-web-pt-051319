@@ -11,14 +11,6 @@ class Transfer
     @status = "pending"
   end 
   
-  
-      it "calls on the sender and receiver's #valid? methods" do
-      transfer_class = File.read("lib/transfer.rb")
-
-      expect(amanda).to receive(:valid?).and_return(true)
-      expect(avi).to receive(:valid?).and_return(true)
-  
-  
   def linked_receiver
      @linked_receiver = BankAccount.find_by_name(self.receiver)
   end 
@@ -28,7 +20,7 @@ class Transfer
   end 
   
   def valid?
-   linked_sender.valid? && linked_receiver.valid?
+   self.sender.valid? && self.receiver.valid?
   end 
   
 end
