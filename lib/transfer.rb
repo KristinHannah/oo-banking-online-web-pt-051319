@@ -18,6 +18,10 @@ class Transfer
   def execute_transaction
     if self.sender.valid?
       self.sender.balance -= self.amount 
+      self.receiver.balance += self.amount 
+    else 
+      "Transfer not valid"
+    end 
   end 
   
   
