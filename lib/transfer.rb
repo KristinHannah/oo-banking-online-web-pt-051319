@@ -20,7 +20,7 @@ class Transfer
   end 
   
   def valid?
-   self.linked_sender.valid? && self.linked_receiver.valid?
+   linked_sender.valid? && linked_receiver.valid?
   end 
   
   def execute_transaction 
