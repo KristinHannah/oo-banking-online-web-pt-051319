@@ -32,6 +32,7 @@ class Transfer
        self.receiver.balance -= self.amount 
      else 
        "rejected"
+     end 
   end 
   
   
