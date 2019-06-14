@@ -1,3 +1,4 @@
+require "pry"
 
 class Transfer
   attr_accessor :status
@@ -12,6 +13,7 @@ class Transfer
   
   def linked_receiver
      @linked_receiver = BankAccount.find_by_name(self.receiver)
+     binding.pry
   end 
   
   def linked_sender
